@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点石团队2017招新</title>
+<!-- 	<link rel="stylesheet" type="text/css" href="css"> -->
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=750,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache,must-revalidate">
+    <meta http-equiv="expires" content="0">
+<link rel="stylesheet" type="text/css" href="css/loading.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<!-- <script type="text/javascript" src="js/zepto.js"></script> -->
+<script type="text/javascript" src="js/jquery-183.mini.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/resLoader.js"></script>
+</head>
+<body><!-- 
+<img src="点石logo" style="width:0px;height:0px;position: fixed;z-index:100"> -->
+
+<div class="container">
+	<div class="loader">
+    		<div class="loader-inner pacman">
+      			<div></div>
+      			<div></div>
+      			<div></div>
+      			<div></div>
+      			<div></div>
+    		</div>
+    		<p class="loadingtext"></p>
+  			<p class="pointstone1">点石团队2017</p>
+  			<p class="pointstone2">DESIGN: 五斤&nbsp&nbspWEB: HxScript</p>
+  	</div>
+	<div class="page1_enter">
+		<div id="dropB" class="p1_allcube">
+			<img src="images/p1_cube1.png" class="p1_cube1">
+			<div class="start" id="start">
+				<img src="images/p1_start.png" class="p1_start">				<span class="touch2"></span>
+			</div>
+			<div class="recruit" id="dropA">
+				<img src="images/p1_cube2.png" class="p1_cube2">
+				<span class="touch1"></span>
+			</div>
+		</div>	
+	</div>
+	<img src="images/p1_cloud.png" class="p1_cloud">
+	<div class="page2_container">
+		<img class="tree" src="images/tree.gif">
+		<div class="PM">
+			<img src="images/PM.gif">
+			<span class="arrow pmArrow"></span>
+		</div>
+		<div class="MOD">
+			<img src="images/MOD.png">
+			<span class="arrow modArrow"></span>
+		</div>	
+		<div class="ADM">
+			<img src="images/ADM.gif">
+			<span class="arrow admArrow"></span>			
+		</div>
+		<div class="FT">
+			<img src="images/FT.png">
+			<span class="arrow ftArrow"></span>					
+		</div>
+		<div class="DEV">
+			<img src="images/DEV.png">
+			<span class="arrow devArrow"></span>
+		</div>
+		<div class="xiaoxianrou">
+			<img src="images/ghostL.gif" class="ghostL">		
+			<img src="images/ghostR.gif" class="ghostR">
+		</div>
+		<img src="images/p1_cloud.png" class="p2_cloud">
+		<span class="touch3"></span>
+	</div>
+	<div class="page2_show">
+		<div class="intro" id="introPM">
+			<img src="images/PM_intro.png">
+		</div>
+		<div class="intro" id="introMOD">
+			<img src="images/MOD_intro.png">
+		</div>	
+		<div class="intro" id="introADM">
+			<img src="images/ADM_intro.png">
+		</div>
+		<div class="intro" id="introFT" >
+			<img src="images/FT_intro.png">
+		</div>
+		<div class="intro" id="introDEV" >
+			<img src="images/DEV_intro.png">	
+		</div>
+		<div class="mask"></div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+	<script>
+var loader = new resLoader({
+	resources : [
+		'images/ADM.gif',
+		'images/ADM_intro.png',
+		'images/DEV.png',
+		'images/DEV_intro.png',
+		'images/FT.png',
+		'images/FT_intro.png',		
+		'images/MOD.png',		
+		'images/MOD_intro.png',		
+		'images/PM.gif',		
+		'images/PM_intro.png',		
+		'images/arrow.png',		
+		'images/dot.png',		
+		'images/ghostL.gif',		
+		'images/ghostR.gif',		
+		'images/p1_cloud.png',		
+		'images/p1_cube1.png',
+		'images/p1_cube2.png',
+		'images/p1_start.png',
+		'images/p2_bg.jpg',
+		'images/tree.gif',
+	],
+	onStart : function(total){
+		console.log('start:'+total);
+	},
+	onProgress: function(current, total) {
+      $('.loadingtext').html(Math.floor(current / total * 100) + '%');
+    },
+	onComplete : function(total){
+		$('.loader').hide();
+	}
+});
+
+loader.start();
+
+	var PM=$('#introPM');
+	var MOD=$('#introMOD');	
+	var ADM=$('#introADM');
+	var FT=$('#introFT');
+	var DEV=$('#introDEV');
+	var xianrou=$('.xiaoxianrou');
+function introShow(group){
+	group.show();
+	$('.mask').show();
+
+};
+
+function moveShow(group){
+	group.hide();
+	$('.mask').hide();
+}
+
+function page2MoveF(){
+	$('.page2_container').animate({
+		top:'0px'},
+		{duration:0}
+	,'slow');
+}
+
+function page2Move(){
+	$('.page2_container').animate({
+		top:'+=-300px'},
+		{duration:500}
+	,'slow');
+}
+
+document.body.addEventListener('touchmove', function (event) {
+    event.preventDefault();
+}, false);
+
+
+
+</script>
+
+</body>
+</html>
